@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/ljdutton2/makechat/issues"
   },
-  "homepage": "https://github.com/ljdutton2/makechat#readme"
+  "homepage": "https://github.com/ljdutton2/makechat#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "socket.io": "^3.0.3"
+  }
 }
