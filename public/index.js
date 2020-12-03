@@ -82,9 +82,19 @@ socket.on('user has left', (onlineUsers) => {
     $('.users-online').append(`<p>${username}</p>`);
   }
 });
-// Add the new channel to the channels list (Fires for all clients)
-socket.on('new channel', (newChannel) => {
-  $('.channels').append(`<div class="channel">${newChannel}</div>`);
+
+	// Add the new channel to the channels list (Fires for all clients)
+	socket.on("new channel", (newChannel) => {
+		$(".channels").append(`<div class="channel">${newChannel}</div>`);
+  });
+  
+socket.on("update channels", (channels) => {
+  for (channel in channels) {
+    if (channel == "General") {
+    } else {
+      $(".channels").append(`<div class="channel">${channel}</div>`);
+    }
+  }
 });
 
 // Make the channel joined the current channel. Then load the messages.
